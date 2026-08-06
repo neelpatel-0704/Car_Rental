@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorlux</title>
+    <style>
+        .home-img1{
+            position: relative;
+            width: 100%;
+            filter: brightness(0.6);
+        }
+        .home-h2
+        {
+            position: absolute;
+            top: 18%;
+            color: white;
+            font-size: 70px;
+            left: 20%;
+        }   
+        .home-p{
+            position: absolute;
+            top: 30%;
+            left: 21%;
+            color: white;
+            text-align: center;
+        }
+        .home-btn{
+            position: absolute;
+            left: 38%;
+            top: 40%;
+            font-size: 20px;
+            height: 7%;
+            width: 20%;
+            border: none;
+            border-radius: 50px;
+        }
+        .home-h1{
+            text-align: center;
+                position: relative;
+                font-size: xxx-large;
+                font-family: sans-serif;
+                font-weight: 700;
+        }
+        .car-img
+        {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+        .car-name
+        {
+            position: relative;
+            text-align: center;
+            background-color: gold;
+            margin-top: 2%;
+            height: 70px;
+            padding: 2%;
+            color: black;
+            font-family: system-ui;
+        }
+        .car5
+        {
+            position: relative;
+            width: 100%;
+            height:600px;
+        }
+        .home-p1
+        {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            font-family: system-ui;
+            font-weight: 400;
+        }
+        .number
+        {
+            height: 80px;
+            width: 80px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            padding: 22px;
+            text-align: center;
+            position: relative;
+            left: 48%;
+            border: 1px solid gold;
+            border-width: thick;
+        }
+    </style>
+</head>
+<body>
+    <d1iv>
+        <div><%- include('myheader') %></div>
+        <div>
+            <image src="/home-img1" class="home-img1">
+                <h2 class="home-h2">Find best car Here for users</h2>
+                <p class="home-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has been the industry's standard dummy text ever since theLorem Ipsum is simply dummy text of the printing.</p>
+                <button class="home-btn">Read More</button>
+        </div>
+        <div>
+            <h1 class="home-h1 mt-5">VARIETY OF CARS</h1>
+            <div class="container mt-5">
+                <div class="row mt-5">
+                    <div class="col-lg-4">
+                        <image src="/car1" class="car-img"></image>
+                    </div>
+                    <div class="col-lg-4">
+                        <image src="/car2" class="car-img"></image>
+                    </div>
+                    <div class="col-lg-4">
+                        <image src="/image22" class="car-img"></image>
+                    </div>
+                </div>
+                <div class="row car-name mt-4">
+                    <div class="col-lg-4">
+                        <h2>BMW</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <h2>HUNDAI</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <h2>TATA</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mt-5">
+                <image src="/car3" class="car5"></image>
+            </div>            
+        </div>
+        <div>
+            <h1 class="home-h1 mt-5">Why Choose Us</h1>
+            <p class="home-p1 mt-4">It is a long established fact that a reader will be distracted by the readable content of a page when<br>
+                looking at it's layout. The point of using</p>
+        </div>
+        <div>
+            <div class="number mt-5">01</div>
+            <p class="home-p1 mt-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout. The point of using<br>
+                Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making</p>
+
+            <div class="number mt-5">02</div>
+            <p class="home-p1 mt-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout. The point of using<br>
+                Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making</p>
+
+            <div class="number mt-5">03</div>
+            <p class="home-p1 mt-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout. The point of using<br>
+                Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making</p>
+        </div>
+        <div class="mt-5">
+            <%- include('myfooter') %>
+        </div>
+    </div>
+</body>
+</html>

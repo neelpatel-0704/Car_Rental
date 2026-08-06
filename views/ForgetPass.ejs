@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* .forgetpass-button {
+            border-radius: 5px;
+            border: 1px solid blue;
+            color: black;
+            background-color: #f3f3f3;
+            font-family: system-ui;
+            font-weight: 600;
+        } */
+         .forgetpass-button{
+            border-radius: 15px;
+            border: white;
+            color: black;
+            background-color: #f3f3f3;
+            font-size:20px;
+         }
+        .forgetpass-p {
+            font-family: system-ui;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .forgetpass-h1 {
+            font-family: system-ui;
+            font-size: 35px;
+            font-variant: small-caps;
+            font-weight: 700;
+        }
+        .img-forgetpass{
+            width: 100%;
+            height: 570px;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+        .forgetpass-social-icon {
+            height: 20px;
+            height: 20px;
+            margin-inline: 5px;
+        }
+        .forgetpass-social-icon:hover {
+            transform: scale(1.5);
+            transition: 0.5s;
+        }
+        .forgetpass-txt {
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            box-shadow: none;
+            width: 60%;
+            padding: 5px;
+        }
+        /* popup box */
+
+        .popup-forget {
+            width: 400px;
+            background-color: white;
+            border-radius: 6px;
+            position: fixed;
+
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1;
+            border: 1px solid black;
+            box-shadow: 0px 10px 10px;
+            font-family: sans-serif;
+            font-variant: all-petite-caps;
+        }
+
+        .popup-forget img {
+            width: 70px;
+            height: 70px;
+            /* margin-top: -50px; */
+            margin-top: 20px;
+            border-radius: -50px;
+
+        }
+
+        .popup-forget h2 {
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+
+        .popup-forget button {
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background-color: #198754;
+            color: white;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .open-popforget {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    
+        <div>
+            <div><%- include('myheader') %></div><br><br>
+            <div class="container mt-5">
+                <form action="http://localhost:3000/ForgetPass/updatepwd" method="post">
+                <div class="row">
+                    <div class="col-sm-7 mt-5">
+                        <image src="/forget-pass" class="img-forgetpass">
+                    </div>
+                   
+                    <div class="col-sm-5 mt-5">
+                        <!-- flash message -->
+                        <% if(message.length > 0) { %>
+                            <div class="alert alert-danger">
+                                <%= message %>
+                            </div>
+                            <% } %>
+                        <h1 class="forgetpass-h1">Welcome Back :)</h1>
+                        <p class="forgetpass-p">Please Enter Your Email or New Password🔔</p>
+                        <div class="form-group">
+                            <input type="email" class="forgetpass-txt" name="email" placeholder="Email">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="password" class="forgetpass-txt" name="pwd" placeholder="New Password">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="password" class="forgetpass-txt" name="con_pwd" placeholder="Confirm Password">
+                        </div><br>
+                        <div>
+                            <a href="http://localhost:3000/Login" class="btn btn-outline-primary">Cancel</a>&nbsp;&nbsp;
+                            <input type="submit" value="Forget Password" onclick="openforget()" class="btn btn-outline-primary">
+                        </div><br>
+                        <div>
+                            <p class="login-p">or you can join with</p>
+                            <image src="/google" class="forgetpass-social-icon">&nbsp;
+                                <image src="/facebook" class="forgetpass-social-icon">&nbsp;
+                                    <image src="/twitter" class="forgetpass-social-icon">
+                        </div>
+                    </div>
+                    
+                </div>
+                </form>
+            </div>
+            <div class="mt-5"><%- include('myfooter') %></div>
+            <div class="popup-forget" id="pop_upforget">
+                <img src="/check" height="5%" width="5%">
+                <h2>Thank you</h2>
+                <p>your Password have been successfully change.</p>
+                <a href="http://localhost:3000/ForgetPass"><button type="submit" onclick="closeforget()">ok</button></a>
+            </div>
+            <script>
+                let pop_upforget = document.getElementById("pop_upforget");
+    
+                function openforget() {
+                    pop_upforget.classList.add("open-popforget");
+                }
+    
+                function closeforget() {
+                    pop_upforget.classList.remove("open-popforget");
+                }
+            </script>
+        </div><br><br>
+   
+</body>
+
+</html>

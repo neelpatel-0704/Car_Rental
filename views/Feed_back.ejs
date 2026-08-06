@@ -1,0 +1,679 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Tushit-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-image: url("/image14");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .image22 {
+            width: 100%;
+            height: 350px;
+            background: transparent;
+        }
+
+        .feed-back-txt {
+            background-color: #ebebebb8;
+            font-size: 16px;
+            border: 1px solid #ebebebb8;
+        }
+
+        .feed-back-h5 {
+            box-shadow: rgb(241 0 0) -4px 0px 0px;
+        }
+
+        .feed-back-btn {
+            position: absolute;
+            right: 60px;
+            width: 10%;
+            border-radius: 10px;
+        }
+
+        /* popup box */
+
+        .popup-feed {
+            width: 400px;
+            background-color: white;
+            border-radius: 6px;
+            position: fixed;
+
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1;
+            border: 1px solid black;
+            box-shadow: 0px 10px 10px;
+            font-family: sans-serif;
+            font-variant: all-petite-caps;
+        }
+
+        .popup-feed img {
+            width: 70px;
+            height: 70px;
+            /* margin-top: -50px; */
+            margin-top: 10px;
+            border-radius: -50px;
+
+        }
+
+        .popup-feed h2 {
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+
+        .popup-feed button {
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background-color: #198754;
+            color: white;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .open-popfeed {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .navbar {
+            backdrop-filter: blur(50px);
+            position: fixed;
+            background-color: #ffffff;
+            width: 100%;
+            height: 80px;
+            top: 0;
+            z-index: 1;
+        }
+
+        .nav-link {
+            color: rgb(0, 0, 0);
+            font-family:math;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-inline: 25px;
+            position: relative;
+            top: 12px;
+            left: 20px;
+            margin-top: 65px;
+        }
+
+        .nav-link:hover {
+            color: rgb(255, 0, 0);
+        }
+
+        .header-logo {
+            width: 100%;
+            height: 200px;
+            margin-inline: 15px;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-profile {
+            position: fixed;
+            right: 2%;
+            text-align: center;
+            top: 20%;
+            border: none;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #b54646;
+            color: white;
+            font-size: 25px;
+            font-family: sans-serif;
+            font-variant: all-petite-caps;
+            font-weight: 500;
+            text-decoration: none;
+            mix-blend-mode: hard-light;
+        }
+
+        .i_1 {
+            position: absolute;
+            top: 20%;
+            right: 1%;
+            object-fit: contain;
+            mix-blend-mode: hard-light;
+            border-radius: 73%;
+            width: 50px;
+        }
+
+        .k {
+            color: white;
+            font-size: 43px;
+            font-weight: 700;
+
+        }
+        .pro{
+            color: white;
+            font-family: Perpetua Titling MT;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-inline: 25px;
+            position: relative;
+            top: 20px;
+            left: 240%;
+        }
+/* 
+        .profile {
+            position: absolute;
+            
+            object-fit: contain;
+            mix-blend-mode: hard-light;
+            border-radius: 73%;
+            width: 50px;
+            left: 650px;
+            top: -14px;
+        } */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            /* right: 115px; */
+            left: 560px;
+            top: 52px;
+        }
+        .dropdown-content a {
+            font-size: 18px;
+            font-family: sans-serif;
+            font-variant: all-petite-caps;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a {
+            background-color: #f1f1f1
+        }
+
+        .dropdown .dropdown-content {
+            display: block;
+        }
+        .sing-out{
+            font-size: 18px;
+            font-family: sans-serif;
+            font-variant: all-petite-caps;
+            color: black;
+            text-decoration: none;
+            display: block;
+            margin-left: 22px;
+            margin-top: -18px;
+        }
+        .log
+        {
+            position: absolute;
+            right: 10%;
+        }
+    </style>
+     <script>
+        $(document).ready(function () {
+            $('#d1').hide();
+            $('#contain').hide();
+            $('#Profile').click(function()
+            {
+                $('#contain').toggle();
+            });
+            $('#link2').click(function()
+            {
+                $('#d1').toggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <nav class="navbar navbar-expand-sm">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <image src="/headerlogo" class="header-logo">
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/E_book" class="nav-link">Show Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/Feed_back" class="nav-link">Feed back</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/Feed_back_history" class="nav-link">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/Profile" class="nav-link">Profile</a>
+                    </li>
+                    <li class="nav-item log">
+                        <a href="http://localhost:3000/Feed_back/Logout" class="nav-link log">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+    </div>
+   <br><br><br><br>
+   <% if(action == 'add') { %>
+    <form action="http://localhost:3000/Feed_back/Show_feed" method="POST" class="needs-validation" novalidate>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" align="center">
+                    <h1><b>FEEDBACK</b></h1>
+                    <h6 style="position: absolute;top: 20%;right: 44%;">SUBMIT YOUR FEEDBACK</h6>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" name="car_name" placeholder="ENTER CAR NAME*" id="car" required>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <select class="form-select" name="Bra_id" id="branch" required>
+                                    <% if(data.length>0)
+                                        {
+                                        data.forEach(function(data){
+                                        %>
+                                        <option value="" hidden>Enter Branch*</option>
+                                        <option value="<%= data.Branch_id %>"><%= data.Branch_name%></option>
+                                        <% }); } %>
+                                </select>
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control feed-back-txt" id="dealer" name="dealer_name" placeholder="ENTER DEALER NAME*" required>
+                                    
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <img src="/image38" class="image22">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class=" feed-back-h5"><b>&nbsp; PERSONAL INFORMATION:</b><span style="font-family: unset;font-size: 75%;">&nbsp;PROVIDE COMPLETE MAILING ADDRESS</span>
+                    </h5>
+                </div>
+            </div>
+        </div><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <select class="form-select feed-back-txt" id="type" required>
+                            <option>Mr.</option>
+                            <option>Mrs.</option>
+                            <option>Ms.</option>
+                            <option>DR.</option>
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" value="<%= Users %>" readonly id="user" placeholder="NAME*" required readonly>
+                            
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="number" class="form-control feed-back-txt" id="phone" readonly value="<%= Phone_nos %>" placeholder="MOBILE*" required readonly>
+                            
+                    </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <textarea name="" id="add" rows="3" cols="84" class="form-control" placeholder="ADDRESS*" required></textarea>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control feed-back-txt" readonly value="<%= Emails %>" id="mail" name="email" placeholder="EMAIL*" required readonly>
+                            
+                    </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" readonly value="<%= States %>" name="state" id="state" placeholder="STATE*" required readonly>
+                            
+                    </div><br>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" readonly value="<%= Citys %>" name="city" id="city" placeholder="CITY*" required readonly>
+                            
+                    </div><br>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <textarea name="review" id="grievance" rows="3" cols="84" class="form-control" placeholder="GRIEVANCE*" style="margin-top: -6%;" required></textarea>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="tel" placeholder="PINCODE*"  class="form-control feed-back-txt" id="pincode"  name="pincode" pattern="^\d{6}$"  required>    
+                    </div><br>
+                </div>
+                <div class="col-sm-1">
+                    <div class="form-group">
+                        <input type="checkbox" style="height: 28px;width: 28px;" checked>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <p style="margin-left: -13%;">&nbsp;I hereby agree to receive emails,calls and SMS related to promotional activities and services, by or on behalf of NKM.</p>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input type="submit" value="SUBMIT" onclick="openfeed_back()"
+                            class="btn btn-danger feed-back-btn">
+                    </div>
+                </div>
+            </div>
+        </div><br>
+    </form>
+    <% } else if(action == 'edit') { %>
+    <form action="/Feed_back_history/edit/<%= sampleData.Feedback_id %>" method="POST" class="needs-validation" novalidate>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" align="center">
+                    <h1><b>FEEDBACK</b></h1>
+                    <h6 style="position: absolute;top: 20%;right: 44%;">SUBMIT YOUR FEEDBACK</h6>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" name="car_name" value="<%= sampleData.Car_name %>"
+                            placeholder="ENTER CAR NAME*" id="car" required>
+                            
+                    </div><br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <select class="form-select" name="Bra_id" required>
+                                    <% if(data.length>0)
+                                        {
+                                        data.forEach(function(data){
+                                        %>
+                                        <option value="" hidden>Enter Branch*</option>
+                                        <option value="<%= data.Branch_id %>"><%= data.Branch_name%></option>
+                                        <% }); } %>
+                                </select>
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control feed-back-txt" name="dealer_name" 
+                                    placeholder="ENTER DEALER NAME*" required>
+                                    
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <img src="/image38" class="image22">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class=" feed-back-h5"><b>&nbsp; PERSONAL INFORMATION:</b><span
+                            style="font-family: unset;font-size: 75%;">&nbsp;PROVIDE COMPLETE MAILING ADDRESS</span>
+                    </h5>
+                </div>
+            </div>
+        </div><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <select class="form-select feed-back-txt" required>
+                            <option>---*</option>
+                            <option>Mr.</option>
+                            <option>Mrs.</option>
+                            <option>Ms.</option>
+                            <option>DR.</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt"  value="<%= sampleData.User_name %>"
+                            placeholder="NAME*" required>
+                            
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input type="number" class="form-control feed-back-txt" value="<%= sampleData.Phone_no %>"
+                            placeholder="MOBILE*" required>
+                            
+                    </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <textarea name="" id="" rows="3" cols="84" class="form-control" placeholder="ADDRESS*" required></textarea>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control feed-back-txt" value="<%= sampleData.Email %>" name="email" placeholder="EMAIL*" required>
+                            
+                    </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" value="<%= sampleData.State %>" name="state" placeholder="STATE*" required>
+                            
+                    </div><br>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control feed-back-txt" value="<%= sampleData.City %>" name="city" placeholder="CITY*" required>
+                            
+                    </div><br>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <textarea name="review" rows="3" cols="84" class="form-control" placeholder="GRIEVANCE*"  value="<%= sampleData.Grievance %>" style="margin-top: -6%;" required></textarea>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="number" class="form-control feed-back-txt" name="pincode" placeholder="PINCODE*" required>
+                            
+                    </div><br>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input type="submit" value="SUBMIT" onclick="openfeed_back()"
+                            class="btn btn-danger feed-back-btn">
+                    </div>
+                </div>
+            </div>
+        </div><br>
+    </form>
+    <% } %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;<b>Disclaimer:</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p><i>The information that you submit will not be used or distributed for any reason other than to
+                        fulfill your request.</i></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="mt-5">
+        <%- include('myfooter') %>
+    </div>
+    <div class="popup-feed" id="pop_up3">
+        <img src="/check" height="5%" width="5%">
+        <h2>Thank you</h2>
+        <p>The more feedback you give to people, the better it is, as long as the feedback is objective
+            and not critical.</p>
+        <a href="http://localhost:3000/Feed_back"><button type="submit" onclick="closefeed_back()">ok</button></a>
+    </div>
+    <script>
+        let pop_up3 = document.getElementById("pop_up3");
+
+        function openfeed_back()
+        {
+            var car=document.getElementById("car").value;
+            var branch=document.getElementById("branch").value;
+            var type=document.getElementById("type").value;
+            var dealer=document.getElementById("dealer").value;
+            var user=document.getElementById("user").value;
+            var phone=document.getElementById("phone").value;
+            var add=document.getElementById("add").value;
+            var state=document.getElementById("state").value;
+            var city=document.getElementById("city").value;
+            var mail=document.getElementById("mail").value;
+            var grievance=document.getElementById("grievance").value;
+            var pincode=document.getElementById("pincode").value;
+
+            //if(car=="" && branch=="" && dealer=="" && type=="" && user=="" && phone=="" && add=="" && state=="" && city=="" && mail=="" && grievance=="" && pincode=="")
+            if(car=="")
+                alert("Please Fill Car Name !");
+            else if(branch=="")
+                alert("Please Select Branch !");
+            else if(dealer=="")
+                alert("Please Fill Dealer !");    
+            else if(type=="")
+                alert("Please Select Surname !");
+            else if(user=="")
+                alert("Please Fill User Name !");
+            else if(phone=="")
+                alert("Please Fill Phone No !");
+            else if(phone.length!=10)
+                alert("Invalid Phone number !");
+            else if(add=="")
+                alert("Please Fill Address !");
+            else if(state=="")
+                alert("Please Fill State !");
+            else if(city=="")
+                alert("Please Fill City !");
+            else if(mail=="")
+                alert("Please Fill Email !");
+            else if(grievance=="")
+                alert("Please Fill Grievance !");
+            else if(pincode=="")
+                alert("Please Fill Pincode !");
+            else if(pincode.length!=6)
+                alert("Invalid Pincode!");
+            else
+            {
+                pop_up3.classList.add("open-popfeed");
+            }
+            
+        }
+        function closefeed_back() {
+            pop_up3.classList.remove("open-popfeed");
+        }
+    </script>
+     <!-- validation -->
+     <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+    </script>
+
+</body>
+
+</html>

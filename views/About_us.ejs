@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .image23{
+            width: 100%;
+            position: relative;
+            filter: brightness(0.7);
+        }
+        .image24{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .abt-h4{
+            font-size: 25px;
+            color: #da2a2a;
+            font-family: system-ui;
+            font-weight: 700;
+            font-variant: small-caps;
+            position: absolute;
+            top: 35%;
+            left: 40%;
+        }
+        .abt-h1{
+            font-size: 100px;
+            font-family: system-ui;
+            font-variant: small-caps;
+            font-weight: 700;
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 18%;
+        }
+        .abt-p{
+            position: absolute;
+            font-size: 25px;
+            color: white;
+            top: 60%;
+            left: 30%;
+            font-family: system-ui;
+            font-weight: 300;
+            font-variant: small-caps;
+        }
+        .abt-btn{
+            position: absolute;
+            border: none;
+            top: 75%;
+            left: 40%;
+            height: 7%;
+            width: 20%;
+            background-color: red;
+            border-radius: 30px;
+            color: white;
+            font-size: 15px;
+            font-family: system-ui;
+            font-weight: 700;
+            font-variant: petite-caps;
+        }
+        .abt-h2{
+            color: red;
+            text-decoration: overline;
+            font-size: 20px;
+            letter-spacing: 4px;
+            font-family: system-ui;
+            font-weight: 700;
+            font-variant: petite-caps;
+            margin-bottom: 5%;
+        }
+        .abt-h3{
+            position: relative;
+            font-size: 40px;
+            font-family: system-ui;
+            font-variant: small-caps;
+            font-weight: bold;
+        }
+        .learnmore{
+            position: relative;
+            top: 7%;
+            height: 11%;
+            width: 35%;
+            border: none;
+            border-radius: 30px;
+            background: red;
+            color: white;
+            font-family: system-ui;
+            font-variant: unicase;
+            font-weight: 500;
+        }
+        .li-contain{
+            font-size: 18px;
+            font-family: system-ui;
+            font-weight: 400;
+            font-variant: all-small-caps;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .div-service{
+            padding: 5%;
+            margin-bottom: 2%;
+        }
+        .abt-lbl1{
+            position: relative;
+            top: 35px;
+            color: red;
+            text-decoration: overline;
+            font-size: 25px;
+            font-variant: petite-caps;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .abt-lbl2{
+            text-align: center;
+            position: relative;
+            top: 30px;
+            font-size: 50px;
+            font-variant: all-small-caps;
+            font-weight: 700;
+            font-family: system-ui;
+        }
+        .box{
+            width: 100%;
+            height: 200px;
+            background-color: rgb(13 13 55);
+            position:relative;
+            top: 50px;
+        }
+        .abt-lbl3{
+            font-size: 50px;
+            text-align: center;
+            font-family: system-ui;
+            font-variant: all-small-caps;
+            font-weight: 700;
+            top: 50px;
+            position: relative;
+        }
+        .div-icon{
+            height: 70px;
+            width: 70px;
+            position: relative;
+            left: 35%;
+            top: 25%;
+        }
+        .div-icon:hover{
+            transform:scale(1.1);
+            transition: 0.5xs;
+        }
+        .service-h4{
+            text-align: center;
+            position: relative;
+            top: 30%;
+            font-size: 25px;
+            font-family: system-ui;
+            font-variant: all-small-caps;
+            font-weight: 700;
+        }
+        .service-p{
+            position: relative;
+            top: 40%;
+            text-align: center;
+            font-weight: 300;
+            color: gray;
+        }
+        .workers{
+            height: 300px;
+            width: 250px;
+            top: 100px;
+            position: relative;
+            margin-inline: 20px;
+            margin-bottom: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .workers:hover{
+            transform:scale(1.1);
+            transition: 0.6s;
+            border:3px solid gray;
+        }
+        .worker-h3{
+            position: relative;
+            text-align: center;
+            top: 10px;
+            font-size: 25px;
+            font-family: system-ui;
+            font-variant: all-petite-caps;
+            font-weight: 700;
+        }
+        .worker-p{
+            position: relative;
+            text-align: center;
+            top: 10px;
+            font-family: system-ui;
+            font-variant: all-petite-caps;
+            font-weight: 400;
+            color: #7e7d7d;
+        }
+        .home-num{
+            font-size: 50px;
+            font-family: inherit;
+            color: white;
+        }
+        .home-p1{
+            position: relative;
+            top: -26px;
+            left: 2px;
+            font-size: 15px;
+            color: white;
+        }
+        .home-p3{
+            position: relative;
+            top: -20px;
+            color: white;
+        }
+        .home-h3{
+            margin-top: -90px;
+            margin-left: 80px;
+            font-size: 55px;
+            color: white;
+        }
+        .home-h1{
+            margin-left:53px;
+            margin-top: -77px;
+            color: white;
+        }
+        .home-p4 {
+            position: relative;
+            font-size: 15px;
+            top: -7px;
+            right: -25px;
+            color: white;
+        }
+        .home-p2{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <%- include('myheader') %>
+    </div>
+    <div>
+        <image src="/image23" class="image23">
+    </div>
+    <div>
+        <h4 class="abt-h4">Upgrade & Detailling</h4>
+        <h1 class="abt-h1">Keep your car newer</h1>
+        <p class="abt-p">The French inventor Nicolas-Joseph Cugnot built<br>the first steam-powered road vehicle in 1769.</p>
+        <button class="abt-btn">Explore More</button>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <image src="/image24" class="image24">
+            </div>
+            <div class="col-sm-6">
+                <h2 class="abt-h2">About Us</h2>
+                <h3 class="abt-h3">Car Upgrade And Detailing</h3>
+                <p>While luxury cars are on most people's wishlists, they're not always within our price ranges. </p>
+                <ul>
+                    <li class="li-contain">Seat Upgrade</li>
+                    <li class="li-contain">Auto Window Film Upgrade</li>
+                    <li class="li-contain">interior Upgrade</li>
+                    <li class="li-contain">window wiping</li>
+                </ul>
+                <button class="learnmore">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Service -->
+    
+    <div class="container">
+        <h2 class="abt-lbl1 mt-5">What we do ?</h2>
+        <h1 class="abt-lbl2">Premium Services</h1>
+        <div class="row mt-5">
+            <div class="col-sm-3">
+                <image src="/image25" class="div-icon">
+                <h4 class="service-h4">Car-service</h4>
+                <p class="service-p">A motor vehicle service or tune-up is a series of maintenance procedures carried out at a set time interval or after the vehicle has traveled a certain distance.</p>
+            </div>
+            <div class="col-sm-3">
+                <image src="/image26" class="div-icon">
+                <h4 class="service-h4">Car-workshop</h4>
+                <p class="service-p">healthiness and the presence of innovative equipment and machinery - has a great influence on the efficiency, productivity and satisfaction of operators and customers.</p>
+            </div>
+            <div class="col-sm-3">
+                <image src="/image27" class="div-icon">
+                <h4 class="service-h4">Car-Repair</h4>
+                <p class="service-p"> It's also important to know how to choose a good mechanic, the kinds of questions to ask, and your consumer rights.</p>
+            </div>
+            <div class="col-sm-3">
+                <image src="/image28" class="div-icon">
+                <h4 class="service-h4">Road_safety</h4>
+                <p class="service-p">Our aim is to provide road safety information for road users to encourage safer road user behaviour among current and prospective road users and reduce the number of people killed and injured on our roads every year.</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <image src="/image29" class="div-icon"><br>
+                <h4 class="service-h4">Maintenance</h4>
+                <p class="service-p">at least half of them are living parasitically on the other half instead of producing maintenance for themselves.</p>
+            </div>
+            <div class="col-md-3">
+                <image src="/image30" class="div-icon">
+                <h4 class="service-h4">Management-service</h4>
+                <p class="service-p">Management is a process of planning, decision making, organizing, leading,
+                    motivation.</p>
+            </div>
+            <div class="col-md-3">
+                <image src="/image31" class="div-icon">
+                <h4 class="service-h4">Car-service</h4>
+                <p class="service-p">The actual schedule of car maintenance varies depending on the year, make, and model of a car, its driving conditions, and driver behavior.</p>
+            </div>
+            <div class="col-md-3">
+                <image src="/image32" class="div-icon">
+                <h4 class="service-h4">Oil-change</h4>
+                <p class="service-p">The oil change is the ultimate introduction to DIY vehicle maintenance.</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- engineer & Workers -->
+    
+    <div class="container">
+        <h1 class="abt-lbl3 mt-5">Our engineers & Workers</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <image src="/image33" class="workers">
+                <h3 class="worker-h3">Donald John</h3>
+                <p class="worker-p">Engineer</p>
+            </div>
+            <div class="col-md-3">
+                <image src="/image34" class="workers">
+                <h3 class="worker-h3">Adam Phillips</h3>
+                <p class="worker-p">Worker</p>
+            </div>
+            <div class="col-md-3">
+                <image src="/image35" class="workers">
+                <h3 class="worker-h3">Thomas Olsen</h3>
+                <p class="worker-p">Worker</p>
+            </div>
+            <div class="col-md-3">
+                <image src="/image36" class="workers">
+                <h3 class="worker-h3">James Aline</h3>
+                <p class="worker-p">Engineer</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <%- include('myfooter') %>
+    </div>
+</body>
+</html>
