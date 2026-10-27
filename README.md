@@ -218,13 +218,13 @@ git push origin feature-name
 
 ## 👨‍💻 Developer
 
-**Your Name**
+**PATEL NEEL**
 
-GitHub: https://github.com/your-username
+GitHub: [https://github.com/your-username](https://github.com/neelpatel-0704)
 
-LinkedIn: https://linkedin.com/in/your-profile
+LinkedIn: [https://linkedin.com/in/your-profile](https://www.linkedin.com/in/neel-patel-13bb23293/)
 
-Email: your-email@example.com
+Email: neel.patel.2k22@gmail.com
 
 ---
 
